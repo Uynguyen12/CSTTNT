@@ -24,7 +24,7 @@ class GreedyBestFirstSearch(InformedSearchAlgorithm):
     Chỉ quan tâm đến estimated distance tới goal, không quan tâm cost từ start.
     """
     
-    def __init__(self, heuristic: str = 'euclidean', verbose: bool = False):
+    def __init__(self, heuristic='euclidean', verbose: bool = False):
         super().__init__(heuristic=heuristic, verbose=verbose)
     
     def _search(self, graph, start: int, goal: int) -> SearchResults:
@@ -112,7 +112,7 @@ class AStarSearch(InformedSearchAlgorithm):
     - Estimate còn phải đi (h)
     """
     
-    def __init__(self, heuristic: str = 'euclidean', verbose: bool = False):
+    def __init__(self, heuristic='euclidean', verbose: bool = False):
         super().__init__(heuristic=heuristic, verbose=verbose)
     
     def _search(self, graph, start: int, goal: int) -> SearchResults:

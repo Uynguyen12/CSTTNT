@@ -179,15 +179,20 @@ class InformedSearchAlgorithm(BaseSearchAlgorithm):
     """
     
     def __init__(self, 
-                 heuristic: str = 'euclidean',
+                 heuristic = 'euclidean',
                  verbose: bool = False):
         """
         Args:
-            heuristic: Loại heuristic ('euclidean' hoặc 'manhattan')
+            heuristic: Loại heuristic (str: 'euclidean'/'manhattan') hoặc callable function
             verbose: In thông tin debug
         """
         super().__init__(verbose)
         self.heuristic = heuristic
+        self._heuristic_callable = None
+        
+        # Nếu heuristic là callable, lưu nó
+        if callable(heuristic):
+            self._heuristic_callable = heuristic
     
     def _get_heuristic_function(self, graph: 'Graph') -> Callable:
         """
@@ -199,12 +204,20 @@ class InformedSearchAlgorithm(BaseSearchAlgorithm):
         Returns:
             heuristic_func: Function(node1, node2) -> float
         """
-        if self.heuristic == 'euclidean':
-            return graph.euclidean_distance
-        elif self.heuristic == 'manhattan':
-            return graph.manhattan_distance
+        # Nếu đã có callable heuristic, dùng nó
+        if self._heuristic_callable is not None:
+            return self._heuristic_callable
+        
+        # Nếu heuristic là string, tìm loại tương ứng
+        if isinstance(self.heuristic, str):
+            if self.heuristic == 'euclidean':
+                return graph.euclidean_distance
+            elif self.heuristic == 'manhattan':
+                return graph.manhattan_distance
+            else:
+                raise ValueError(f"Unknown heuristic: {self.heuristic}")
         else:
-            raise ValueError(f"Unknown heuristic: {self.heuristic}")
+            raise ValueError(f"Heuristic must be string or callable, got {type(self.heuristic)}")
     
     def _compute_heuristic(self,
                           graph: 'Graph',
