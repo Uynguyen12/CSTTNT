@@ -127,7 +127,10 @@ class TeachingLearningBasedOptimization(PopulationBasedOptimizer):
             if self.teacher_fitness < self.best_fitness:
                 self.best_solution = self.teacher.copy()
                 self.best_fitness = self.teacher_fitness
-        
+                
+        self.position_history.append(self.students.copy())
+        self.best_history.append(self.best_solution.copy())
+
         return self.best_fitness
     
     def _teacher_phase(self) -> None:

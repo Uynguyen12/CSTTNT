@@ -3,11 +3,10 @@ Utilities Package
 Helper classes and functions
 """
 
-from .graph import Graph, create_grid_graph
+from .graph import Graph
 
 __all__ = [
-    'Graph',
-    'create_grid_graph'
+    'Graph'
 ]
 
 __version__ = '1.0.0'

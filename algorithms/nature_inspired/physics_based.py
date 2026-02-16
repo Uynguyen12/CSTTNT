@@ -159,7 +159,9 @@ class GravitationalSearchAlgorithm(PopulationBasedOptimizer):
         if self.fitness_values[best_idx] < self.best_fitness:
             self.best_solution = self.agents[best_idx].copy()
             self.best_fitness = self.fitness_values[best_idx]
-        
+        self.position_history.append(self.agents.copy())
+        self.best_history.append(self.best_solution.copy())
+
         return self.best_fitness
     
     def _update_masses(self) -> None:
@@ -305,7 +307,9 @@ class HarmonySearch(PopulationBasedOptimizer):
             if new_fitness < self.best_fitness:
                 self.best_harmony = new_harmony.copy()
                 self.best_fitness = new_fitness
-        
+            self.position_history.append(self.harmony_memory.copy())
+            self.best_history.append(self.best_harmony.copy())
+
         return self.best_fitness
     
     def _improvise_new_harmony(self) -> np.ndarray:

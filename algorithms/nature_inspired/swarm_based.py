@@ -116,6 +116,7 @@ class ParticleSwarmOptimization(PopulationBasedOptimizer):
         best_idx = np.argmin(self.fitness_values)
         self.global_best_position = self.population[best_idx].copy()
         self.global_best_fitness = self.fitness_values[best_idx]
+        
     
     def _iterate(self) -> float:
         """
@@ -177,6 +178,8 @@ class ParticleSwarmOptimization(PopulationBasedOptimizer):
             self.global_best_position = self.population[best_idx].copy()
             self.global_best_fitness = self.fitness_values[best_idx]
         
+        self.position_history.append(self.population.copy())
+
         return self.global_best_fitness
     
     def _get_best_solution(self) -> Tuple[np.ndarray, float]:
@@ -361,7 +364,7 @@ class AntColonyOptimization(PopulationBasedOptimizer):
         if self.archive_fitness[0] < self.best_fitness:
             self.best_solution = self.archive[0].copy()
             self.best_fitness = self.archive_fitness[0]
-        
+
         return self.best_fitness
     
     def _get_best_solution(self) -> Tuple[np.ndarray, float]:
@@ -485,7 +488,9 @@ class ArtificialBeeColony(PopulationBasedOptimizer):
         if self.fitness_values[best_idx] < self.best_fitness:
             self.best_solution = self.food_sources[best_idx].copy()
             self.best_fitness = self.fitness_values[best_idx]
+        self.position_history.append(self.food_sources.copy())
         
+
         return self.best_fitness
     
     def _employed_bee_phase(self) -> None:
@@ -733,7 +738,8 @@ class FireflyAlgorithm(PopulationBasedOptimizer):
         if fitness_values[best_idx] < self.best_fitness:
             self.best_solution = self.fireflies[best_idx].copy()
             self.best_fitness = fitness_values[best_idx]
-        
+        self.position_history.append(self.fireflies.copy())
+
         # Decrease randomization parameter
         self.alpha *= 0.97
         
@@ -863,7 +869,9 @@ class CuckooSearch(PopulationBasedOptimizer):
         if self.fitness_values[best_idx] < self.best_fitness:
             self.best_nest = self.nests[best_idx].copy()
             self.best_fitness = self.fitness_values[best_idx]
-        
+        self.position_history.append(self.nests.copy())
+        self.best_history.append(self.best_nest.copy())
+
         return self.best_fitness
     
     def _levy_flight(self) -> np.ndarray:

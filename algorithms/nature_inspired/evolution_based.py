@@ -321,6 +321,37 @@ class GeneticAlgorithm(PopulationBasedOptimizer):
             'elitism_count': self.elitism_count
         })
         return metadata
+    
+    # 1. Thêm phương thức Mutation cho TSP
+    def _swap_mutation(self, individual: np.ndarray) -> np.ndarray:
+        """Đổi chỗ 2 thành phố bất kỳ"""
+        idx1, idx2 = np.random.choice(self.dimensions, 2, replace=False)
+        individual[idx1], individual[idx2] = individual[idx2], individual[idx1]
+        return individual
+
+    # 2. Thêm phương thức Crossover cho TSP (Order Crossover - OX1)
+    def _ordered_crossover(self, parent1: np.ndarray, parent2: np.ndarray) -> Tuple[np.ndarray, np.ndarray]:
+        """Lai ghép giữ thứ tự để không trùng lặp thành phố"""
+        size = self.dimensions
+        start, end = sorted(np.random.choice(range(size), 2, replace=False))
+        
+        def ox_helper(p1, p2):
+            child = np.full(size, -1)
+            # Copy đoạn gen từ cha 1
+            child[start:end+1] = p1[start:end+1]
+            # Điền các gen còn lại từ cha 2 theo đúng thứ tự
+            current_pos = (end + 1) % size
+            for gene in np.roll(p2, - (end + 1)):
+                if gene not in child:
+                    child[current_pos] = gene
+                    current_pos = (current_pos + 1) % size
+            return child
+
+        return ox_helper(parent1, parent2), ox_helper(parent2, parent1)
+
+    # 3. Cập nhật phương thức _initialize và _mutate, _crossover
+    # Bạn cần sửa lại logic trong các hàm này để kiểm tra nếu là bài toán TSP
+    # thì gọi các hàm mới viết ở trên.
 
 
 class DifferentialEvolution(PopulationBasedOptimizer):
@@ -562,3 +593,5 @@ class DifferentialEvolution(PopulationBasedOptimizer):
             'strategy': self.strategy
         })
         return metadata
+    
+    

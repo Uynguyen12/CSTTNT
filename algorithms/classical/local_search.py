@@ -31,6 +31,8 @@ class HillClimbingSearch(LocalSearchAlgorithm):
     
     def __init__(self, heuristic: str = 'euclidean', verbose: bool = False):
         super().__init__(heuristic=heuristic, verbose=verbose)
+        self.best_route_history = []
+
     
     def _search(self, graph, start: int, goal: int) -> SearchResults:
         """Hill Climbing (Steepest Ascent) algorithm implementation."""
@@ -101,7 +103,8 @@ class HillClimbingSearch(LocalSearchAlgorithm):
                 nodes_explored=self._nodes_explored,
                 explored_order=self._explored_order.copy()
             )
-    
+        
+
     def _reconstruct_hill_climbing_path(self, graph, start: int, current: int):
         """
         Rebuild path từ start đến current dựa trên explored_order.

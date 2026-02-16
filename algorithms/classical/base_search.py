@@ -109,12 +109,20 @@ class BaseSearchAlgorithm(ABC):
         
         return result
     
-    def _validate_inputs(self, graph: 'Graph', start: int, goal: int) -> None:
-        """Validate inputs trước khi search."""
-        if start < 0 or start >= graph.num_nodes:
-            raise ValueError(f"Invalid start node: {start}")
-        if goal < 0 or goal >= graph.num_nodes:
-            raise ValueError(f"Invalid goal node: {goal}")
+    def _validate_inputs(self, graph, start, goal):
+    # Kiểm tra node tồn tại trong graph
+        if not graph.in_bounds(start):
+            raise ValueError("Start node out of bounds")
+
+        if not graph.in_bounds(goal):
+            raise ValueError("Goal node out of bounds")
+
+        if not graph.passable(start):
+            raise ValueError("Start node is blocked")
+
+        if not graph.passable(goal):
+            raise ValueError("Goal node is blocked")
+
     
     def _reconstruct_path(self, 
                          parent: np.ndarray,
