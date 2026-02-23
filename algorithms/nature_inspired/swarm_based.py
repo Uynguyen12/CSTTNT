@@ -4,6 +4,7 @@ PSO, ACO, ABC, FA, CS
 """
 
 import numpy as np
+import math
 from typing import Callable, Tuple, List, Optional, Dict
 from ..base_optimizer import PopulationBasedOptimizer, OptimizationResults
 
@@ -875,8 +876,8 @@ class CuckooSearch(PopulationBasedOptimizer):
         """
         # Mantegna's method for Lévy distribution
         sigma_u = (
-            np.math.gamma(1 + self.beta) * np.sin(np.pi * self.beta / 2) /
-            (np.math.gamma((1 + self.beta) / 2) * self.beta * 2**((self.beta - 1) / 2))
+            math.gamma(1 + self.beta) * math.sin(math.pi * self.beta / 2) /
+            (math.gamma((1 + self.beta) / 2) * self.beta * 2**((self.beta - 1) / 2))
         ) ** (1 / self.beta)
         
         new_nests = np.zeros_like(self.nests)

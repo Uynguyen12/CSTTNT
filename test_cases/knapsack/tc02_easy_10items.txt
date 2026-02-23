@@ -1,0 +1,14 @@
+# Knapsack TC02 - Easy: 10 items, capacity=15
+# Dùng để test: GA, ABC, PSO
+# Complexity: EASY
+10 15
+3 2
+4 3
+5 4
+6 5
+1 1
+4 3
+5 4
+3 2
+7 6
+6 5

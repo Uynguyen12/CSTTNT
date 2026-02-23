@@ -1,0 +1,26 @@
+# Knapsack TC04 - Medium: 20 items, capacity=40
+# Items chia thành nhóm: high-value/heavy vs low-value/light
+# GA và ABC cần khai thác tốt mới chọn đúng tập items
+# Dùng để test: GA, ABC, PSO, DE, CS
+# Complexity: MEDIUM
+20 40
+8 5
+6 3
+9 7
+4 2
+12 8
+7 4
+10 6
+5 3
+11 7
+3 2
+14 9
+6 4
+8 5
+9 6
+7 4
+13 8
+5 3
+10 6
+4 2
+11 7

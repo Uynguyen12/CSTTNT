@@ -1,0 +1,36 @@
+# Knapsack TC05 - Medium-Hard: 30 items, capacity=60
+# Nhiều items có weight gần nhau nhưng value chênh lệch lớn
+# Cần tìm combination tốt, greedy sẽ không optimal
+# Dùng để test: GA, ABC, PSO, DE, FA, CS
+# Complexity: MEDIUM-HARD
+30 60
+12 7
+8 4
+15 10
+6 3
+20 13
+9 5
+14 8
+5 2
+18 11
+7 4
+11 6
+16 9
+4 2
+13 7
+22 14
+8 5
+17 10
+6 3
+19 12
+10 6
+14 8
+7 4
+21 13
+9 5
+16 9
+5 3
+12 7
+18 11
+8 4
+15 9

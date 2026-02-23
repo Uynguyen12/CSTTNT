@@ -1,0 +1,82 @@
+# CONTINUOUS OPTIMIZATION TEST CASES
+# Format mỗi test case:
+#   FUNCTION    DIM   LB      UB      OPTIMUM  DESCRIPTION
+# Dùng để test: GA, DE, PSO, ACO, ABC, FA, CS, GSA, HS, SA, HC, TLBO
+
+# ====== LEVEL 1: TRIVIAL (D=2) ======
+# TC01 - Sphere 2D: f* = 0, dễ nhất
+TC01 sphere 2 -5.12 5.12 0.0 trivial_sphere_2d
+
+# TC02 - Ackley 2D: dễ visualize, nhiều local optima
+TC02 ackley 2 -32.768 32.768 0.0 trivial_ackley_2d
+
+# ====== LEVEL 2: EASY (D=5) ======
+# TC03 - Sphere 5D
+TC03 sphere 5 -5.12 5.12 0.0 easy_sphere_5d
+
+# TC04 - Rosenbrock 5D: narrow valley
+TC04 rosenbrock 5 -2.048 2.048 0.0 easy_rosenbrock_5d
+
+# TC05 - Griewank 5D
+TC05 griewank 5 -600.0 600.0 0.0 easy_griewank_5d
+
+# ====== LEVEL 3: MEDIUM (D=10) ======
+# TC06 - Sphere 10D
+TC06 sphere 10 -5.12 5.12 0.0 medium_sphere_10d
+
+# TC07 - Rastrigin 10D: highly multimodal, bắt đầu khó
+TC07 rastrigin 10 -5.12 5.12 0.0 medium_rastrigin_10d
+
+# TC08 - Ackley 10D
+TC08 ackley 10 -32.768 32.768 0.0 medium_ackley_10d
+
+# TC09 - Rosenbrock 10D: narrow valley khó hơn
+TC09 rosenbrock 10 -2.048 2.048 0.0 medium_rosenbrock_10d
+
+# TC10 - Griewank 10D
+TC10 griewank 10 -600.0 600.0 0.0 medium_griewank_10d
+
+# ====== LEVEL 4: MEDIUM-HARD (D=20) ======
+# TC11 - Sphere 20D
+TC11 sphere 20 -5.12 5.12 0.0 medhard_sphere_20d
+
+# TC12 - Rastrigin 20D
+TC12 rastrigin 20 -5.12 5.12 0.0 medhard_rastrigin_20d
+
+# TC13 - Ackley 20D
+TC13 ackley 20 -32.768 32.768 0.0 medhard_ackley_20d
+
+# TC14 - Rosenbrock 20D
+TC14 rosenbrock 20 -2.048 2.048 0.0 medhard_rosenbrock_20d
+
+# ====== LEVEL 5: HARD (D=30) ======
+# TC15 - Sphere 30D
+TC15 sphere 30 -5.12 5.12 0.0 hard_sphere_30d
+
+# TC16 - Rastrigin 30D: khó nhất trong benchmark multimodal
+TC16 rastrigin 30 -5.12 5.12 0.0 hard_rastrigin_30d
+
+# TC17 - Ackley 30D
+TC17 ackley 30 -32.768 32.768 0.0 hard_ackley_30d
+
+# TC18 - Griewank 30D
+TC18 griewank 30 -600.0 600.0 0.0 hard_griewank_30d
+
+# TC19 - Rosenbrock 30D
+TC19 rosenbrock 30 -2.048 2.048 0.0 hard_rosenbrock_30d
+
+# ====== LEVEL 6: EXPERT (D=50+) ======
+# TC20 - Sphere 50D
+TC20 sphere 50 -5.12 5.12 0.0 expert_sphere_50d
+
+# TC21 - Rastrigin 50D: extreme multimodal
+TC21 rastrigin 50 -5.12 5.12 0.0 expert_rastrigin_50d
+
+# TC22 - Ackley 50D
+TC22 ackley 50 -32.768 32.768 0.0 expert_ackley_50d
+
+# TC23 - Sphere 100D: ultimate scale test
+TC23 sphere 100 -5.12 5.12 0.0 expert_sphere_100d
+
+# TC24 - Rastrigin 100D: hardest
+TC24 rastrigin 100 -5.12 5.12 0.0 expert_rastrigin_100d

@@ -1,0 +1,15 @@
+# TSP TC03 - Easy: 10 cities, random layout in 100x100 grid
+# Standard 10-city benchmark
+# Dùng để test: GA, DE, PSO, ACO, ABC, FA, CS, SA
+# Complexity: EASY
+10
+0 37.45 95.07
+1 73.20 59.87
+2 15.60 5.81
+3 86.62 70.81
+4 2.06 96.99
+5 83.24 21.23
+6 18.18 18.34
+7 30.42 52.48
+8 43.19 29.12
+9 61.19 13.95

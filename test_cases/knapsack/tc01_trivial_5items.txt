@@ -1,0 +1,11 @@
+# Knapsack TC01 - Trivial: 5 items
+# Optimal solution dễ tính tay
+# Optimal: items {2,3,4} → value=17, weight=9 ≤ 10
+# Dùng để test: GA, ABC, PSO
+# Complexity: TRIVIAL
+5 10
+3 2
+5 4
+6 3
+8 5
+4 4
