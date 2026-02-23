@@ -1,0 +1,20 @@
+# Knapsack TC03 - Easy-Medium: 15 items, capacity=25
+# Có các items với value/weight ratio cao và thấp xen kẽ
+# Dùng để test: GA, ABC, PSO, DE
+# Complexity: EASY-MEDIUM
+15 25
+5 3
+8 5
+4 2
+10 6
+7 4
+3 2
+9 5
+6 4
+12 7
+2 1
+8 4
+5 3
+11 6
+4 3
+7 4

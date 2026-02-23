@@ -1,0 +1,18 @@
+# GRAPH TC04 - Easy: 6 nodes, dead-end trap
+# DFS có thể đi vào nhánh cụt (node 3,4) trước khi tìm ra đường
+# Expected optimal: 0→1→5, cost=4.0
+# Complexity: EASY
+6
+0 4
+3 7
+3 1
+6 9
+6 7
+9 4
+0 1 1.5
+0 2 3.0
+1 3 2.0
+1 4 3.5
+1 5 2.5
+2 5 6.0
+0 5

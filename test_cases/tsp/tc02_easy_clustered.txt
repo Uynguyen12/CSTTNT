@@ -1,0 +1,13 @@
+# TSP TC02 - Easy: 8 cities, two clear clusters
+# Thuật toán tốt cần phải tìm ra: đi hết cluster 1 rồi sang cluster 2
+# Dùng để test: GA, DE, PSO, ACO, SA, ABC
+# Complexity: EASY
+8
+0 5.0 5.0
+1 8.0 7.0
+2 7.0 3.0
+3 4.0 8.0
+4 40.0 5.0
+5 43.0 7.0
+6 42.0 3.0
+7 39.0 8.0
