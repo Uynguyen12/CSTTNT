@@ -775,6 +775,7 @@ class CuckooSearch(PopulationBasedOptimizer):
         - Scheduling
     """
     
+    
     def __init__(self,
                  population_size: int = 50,
                  max_iterations: int = 1000,

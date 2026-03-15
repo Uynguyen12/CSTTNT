@@ -1,7 +1,7 @@
 # TSP TC01 - Trivial: 5 cities, arranged in a square + center
 # Optimal tour rõ ràng khi nhìn bằng mắt: 0→1→2→3→4→0
 # Dùng để test: GA, DE, PSO, ACO, SA, CS
-# Optimal tour length ≈ 40.0 (square perimeter)
+# Optimal tour length ≈ 44.1 (total perimeter)
 # Complexity: TRIVIAL
 5
 0 0.0 0.0
