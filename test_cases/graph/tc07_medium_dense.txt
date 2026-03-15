@@ -1,6 +1,6 @@
 # GRAPH TC07 - Medium: 12 nodes, dense graph
 # Heuristic misleading case: Greedy bị dẫn sai, A* tìm đúng optimal
-# Expected optimal: 0→3→7→11, cost=8.5
+# Expected optimal: 0→3→7→11, cost=9.0
 # Complexity: MEDIUM
 12
 0 6
